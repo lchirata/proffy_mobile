@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation, NavigationHelpersContext } from '@react-navigation/native'
-import { RectButton } from 'react-native-gesture-handler'
+import { RectButton } from 'react-native-gesture-handler';
 
 import styles from './styles';
 
@@ -16,6 +16,11 @@ function Landing() {
   function handleNavigateToGiveClassesPage() {
     navigate('GiveClasses');
   }
+
+  function handleNavigateToStudyPages(){
+    navigate('Study');
+  }
+
   return (
     <View style={styles.container}>
       <Image style={styles.image}source={landingImg} />
@@ -26,13 +31,16 @@ function Landing() {
       </Text>
       
       <View style={styles.buttonsContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton 
+            onPress={handleNavigateToStudyPages}
+            style={[styles.button, styles.buttonPrimary]}>
             <Image source={studyIcon} />
             <Text style={styles.buttonText} >Estudar</Text>
         </RectButton>
 
-        <RectButton onPress={handleNavigateToGiveClassesPage} 
-        style={[styles.button, styles.buttonSecoundary]}>
+        <RectButton 
+             onPress={handleNavigateToGiveClassesPage} 
+             style={[styles.button, styles.buttonSecoundary]}>
             <Image source={giveClasses} />
             <Text style={styles.buttonText}>Dar aulas</Text>
         </RectButton>
