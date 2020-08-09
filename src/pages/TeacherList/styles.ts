@@ -23,13 +23,14 @@ const styles = StyleSheet.create({
 
     inputGroup: {
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'center'
         
     },
 
     inputBlock: {
         // width: '48%',
-        padding:10
+        paddingHorizontal:16,
+    
 
     },
 

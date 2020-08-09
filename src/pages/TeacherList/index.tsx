@@ -11,7 +11,7 @@ function TeacherList() {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
     return <View style={styles.container}>
         <PageHeader title="Proffys disponíveis">
-            {/* {isFiltersVisible && ( )}  */}
+            {isFiltersVisible && (
                 <View style={styles.searchForm}>
                     <Text style={styles.label}>Matéria</Text>
                     <TextInput
@@ -28,21 +28,21 @@ function TeacherList() {
                                 placeholder="Qual o dia?" >
                             </TextInput>
                         </View>
-     
 
-                    <View style={styles.inputGroup}>
-                        <View style={styles.inputBlock}>
-                            <Text style={styles.label}>Horário</Text>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Qual horário?" >
-                            </TextInput>
+
+                        <View style={styles.inputGroup}>
+                            <View style={styles.inputBlock}>
+                                <Text style={styles.label}>Horário</Text>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Qual horário?" >
+                                </TextInput>
+                            </View>
                         </View>
-                    </View>
                     </View>
 
                 </View>
-         
+            )}
         </PageHeader>
 
         <ScrollView

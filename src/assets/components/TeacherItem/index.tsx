@@ -24,7 +24,7 @@ function TeacherItem() {
 
             <Text style={styles.bio}>
                 Professora de educação física especializada em artes marciais.
-                {'\n'}{'\n'}
+                {'\n'}
                 Ama o Midoriya
             </Text>
 

@@ -3,7 +3,7 @@ import {View} from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        padding:40,
+        padding:30,
         backgroundColor:'#8257e5'
     },
 
