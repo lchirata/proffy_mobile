@@ -5,14 +5,34 @@ import { Feather } from '@expo/vector-icons'
 
 import styles from './styles';
 import PageHeader from '../../assets/components/PageHeader';
-import TeacherItem from '../../assets/components/TeacherItem';
+import TeacherItem, { Teacher } from '../../assets/components/TeacherItem';
+import api from '../../services/api';
 
 function TeacherList() {
+    const [teachers, setTeachers] = useState([]);
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+
+    const [subject, setSubject]= useState('');
+    const [week_day, setWeekDay]= useState('');
+    const [time, setTime]= useState('');
 
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
     }
+
+    async function handleFiltersSubmit () {
+        const response = await api.get('classes', {
+            params: {
+                subject,
+                week_day,
+                time,
+            }
+        });
+        console.log(response.data);
+        setIsFiltersVisible(false);
+        setTeachers(response.data);
+    }
+
     return <View style={styles.container}>
         <PageHeader
             title="Proffys disponíveis"
@@ -29,6 +49,8 @@ function TeacherList() {
                     <TextInput
                         style={styles.input}
                         placeholder="Qual a matéria?"
+                        value={subject}
+                        onChangeText={text =>setSubject(text)}
                     >
                     </TextInput>
 
@@ -37,7 +59,10 @@ function TeacherList() {
                             <Text style={styles.label}>Dia da semana</Text>
                             <TextInput
                                 style={styles.input}
-                                placeholder="Qual o dia?" >
+                                placeholder="Qual o dia?"
+                                value={week_day}
+                                onChangeText={text =>setWeekDay(text)}
+                                >
                             </TextInput>
                         </View>
                         <View style={styles.inputGroup}>
@@ -45,14 +70,17 @@ function TeacherList() {
                                 <Text style={styles.label}>Horário </Text>
                                 <TextInput
                                     style={styles.input}
-                                    placeholder="Qual horário?" >
+                                    placeholder="Qual horário?"
+                                    value={time}
+                                    onChangeText={text =>setTime(text)}
+                                    >
                                 </TextInput>
                             </View>
                         </View>
                     </View>
 
                     <View>
-                        <RectButton style={styles.submitButton}>
+                        <RectButton onPress={handleFiltersSubmit} style={styles.submitButton}>
                             <Text style={styles.submitButtonText}> Filtrar</Text>
                         </RectButton>
                     </View>
@@ -68,12 +96,10 @@ function TeacherList() {
                 paddingBottom: 16,
             }}
         >
-            <TeacherItem />
-            <TeacherItem />
-            <TeacherItem />
-            <TeacherItem />
-            <TeacherItem />
-            <TeacherItem />
+            {teachers.map((teacher: Teacher) => {
+                return <TeacherItem key={teacher.id} teacher={teacher} />
+            })}
+            
         </ScrollView>
 
     </View>
