@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     },
 
     searchForm: {
-       marginBottom: 8,
+       marginBottom: 8
     },
 
     label: {
@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
 
     inputGroup: {
         flexDirection:'row',
-        justifyContent:'center'
+        padding: 3,
+        justifyContent:'center',
+        alignItems:'baseline'
         
     },
 
@@ -40,9 +42,25 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         justifyContent: 'center',
         paddingHorizontal: 16,
-        marginTop: 4,
-        marginBottom: 16
+        marginTop: 10,
+        // marginBottom: 16
     },
+    
+
+    submitButton: {
+        backgroundColor: '#04d361',
+        height: 56,
+        borderRadius: 8,
+        flexDirection:'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom:10
+
+    },
+    submitButtonText: {
+        color: '#FFF',
+        fontSize:16,
+    }
 
 
 

@@ -9,10 +9,10 @@ import { useNavigation } from '@react-navigation/native';
 
 interface PageHeaderProps {
     title: string;
-    heradreRight?: ReactNode;
+    headerRight?: ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({title, children}) => {
+const PageHeader: React.FC<PageHeaderProps> = ({title,headerRight, children}) => {
     const { navigate } = useNavigation();
 
     function handleGoBack() {
@@ -29,9 +29,11 @@ const PageHeader: React.FC<PageHeaderProps> = ({title, children}) => {
                 <Image source={logoImage} resizeMode="contain" />
 
             </View>
-            <Text style={styles.title}>{title}</Text>
 
-            {/* {heradreRight} */}
+            <View style={styles.header}>
+            <Text style={styles.title}>{title}</Text>
+            {headerRight}
+            </View>
 
             {children}
         </View>

@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import { View, ScrollView, Text, TextInput } from 'react-native';
-// import { Picker } from '@react-native-community/picker';
+import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons'
 
 import styles from './styles';
 import PageHeader from '../../assets/components/PageHeader';
 import TeacherItem from '../../assets/components/TeacherItem';
 
 function TeacherList() {
-
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+
+    function handleToggleFiltersVisible() {
+        setIsFiltersVisible(!isFiltersVisible);
+    }
     return <View style={styles.container}>
-        <PageHeader title="Proffys disponíveis">
+        <PageHeader
+            title="Proffys disponíveis"
+            headerRight={(
+                <BorderlessButton onPress={handleToggleFiltersVisible}>
+                    <Feather name="filter" size={20} color="#FFF" />
+                </BorderlessButton>
+
+            )}>
+
             {isFiltersVisible && (
                 <View style={styles.searchForm}>
                     <Text style={styles.label}>Matéria</Text>
@@ -28,17 +40,21 @@ function TeacherList() {
                                 placeholder="Qual o dia?" >
                             </TextInput>
                         </View>
-
-
                         <View style={styles.inputGroup}>
                             <View style={styles.inputBlock}>
-                                <Text style={styles.label}>Horário</Text>
+                                <Text style={styles.label}>Horário </Text>
                                 <TextInput
                                     style={styles.input}
                                     placeholder="Qual horário?" >
                                 </TextInput>
                             </View>
                         </View>
+                    </View>
+
+                    <View>
+                        <RectButton style={styles.submitButton}>
+                            <Text style={styles.submitButtonText}> Filtrar</Text>
+                        </RectButton>
                     </View>
 
                 </View>
