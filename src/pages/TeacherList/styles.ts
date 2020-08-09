@@ -18,11 +18,19 @@ const styles = StyleSheet.create({
 
     label: {
         color: '#d4c2ff',
+    
     },
 
     inputGroup: {
         flexDirection:'row',
         justifyContent:'space-between'
+        
+    },
+
+    inputBlock: {
+        // width: '48%',
+        padding:10
+
     },
 
     input: {
@@ -35,9 +43,7 @@ const styles = StyleSheet.create({
         marginBottom: 16
     },
 
-    inputBlock: {
-        width: '48%',
-    }
+
 
 
 
