@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     buttonsContainer: {
         // marginLeft: 5,
         flexDirection: 'row',
-        marginTop: 40,
+        marginTop: 30,
         justifyContent: 'space-between'
     },
 
@@ -54,18 +54,21 @@ const styles = StyleSheet.create({
         width: '42%',
         backgroundColor: '#333',
         borderRadius: 8,
-        padding: 24,
         margin:15,
         justifyContent: 'space-between',
     },
 
     buttonPrimary: {
         backgroundColor: '#50C2B1',
-        textAlign:'center'
+        textAlign:'center',
+        paddingTop:20,
+        paddingLeft:40,
     },
 
     buttonSecoundary: {
-        backgroundColor: '#FC6404'
+        backgroundColor: '#FC6404',
+        paddingTop:20,
+        paddingLeft:28,
     },
 
     buttonText: {
