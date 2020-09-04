@@ -24,9 +24,9 @@ function GiveClasses(){
         source={giveClassesBgImage} 
         style={styles.content} >
 
-            <Text style={styles.title}>Quer ser um Proffy?</Text>
+            <Text style={styles.title}>Quer abrir uma conta?</Text>
             <Text style={styles.description}>
-                Para começar, você precisa se cadastrar com oprofessor na nossa plataforma web.
+                Para começar, você precisa se cadastrar na nossa plataforma web.
             </Text>
 
         </ImageBackground>

@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#8257E5',
+        backgroundColor: '#50C2B1',
         justifyContent: 'center',
         padding: 40
     },
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 
     description: {
         marginTop: 24,
-        color: '#d4c2ff',
+        color: '#FC6404',
         fontSize:16,
         lineHeight:26,
         maxWidth:240
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
     okButton: {
         marginVertical:40,
-        backgroundColor: '#04d361',
+        backgroundColor: '#442c74',
         height:58,
         alignItems:'center',
         justifyContent:'center',

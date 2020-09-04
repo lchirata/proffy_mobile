@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#8257E5',
+        backgroundColor: '#442c74',
         justifyContent: 'center',
     },
     banner: {
@@ -18,17 +18,27 @@ const styles = StyleSheet.create({
 
     title: {
 
-        marginLeft: 50,
+        marginLeft: 60,
         color: '#FFF',
-        // fontFamily: 'Poppins_400Regular',
-        fontSize: 20,
+        fontFamily: 'Poppins_400Regular',
+        fontSize: 26,
         lineHeight: 30,
         marginTop: 80,
 
     },
 
     titleBold: {
-        // fontFamily: 'Poppins_400Regular'
+        fontFamily: 'Poppins_400Regular',
+        color: "#50C2B1",
+        textAlign:'center',
+    },
+
+    subtitle: {
+        fontFamily: 'Poppins_400Regular',
+        color: "#FC6404",
+        textAlign:'center',
+        fontSize: 26,
+
     },
 
     buttonsContainer: {
@@ -40,36 +50,39 @@ const styles = StyleSheet.create({
 
     button: {
 
-        height: 150,
-        width: '48%',
+        height: 70,
+        width: '42%',
         backgroundColor: '#333',
         borderRadius: 8,
         padding: 24,
+        margin:15,
         justifyContent: 'space-between',
     },
 
     buttonPrimary: {
-        backgroundColor:'#9871f5'
+        backgroundColor: '#50C2B1',
+        textAlign:'center'
     },
 
     buttonSecoundary: {
-        backgroundColor:'#04D361'
+        backgroundColor: '#FC6404'
     },
 
-    buttonText : {
+    buttonText: {
         // fontFamily: 'Archivo_700Bold',
         color: '#FFF',
-        fontSize:20,
+        fontSize: 20,
     },
 
     totalConnections: {
         // fontFamily: 'Poppins_400Regular',
-        color:'#FFF',
+        color: '#FFF',
         fontSize: 12,
         lineHeight: 20,
-        maxWidth: 140,
-        marginTop: 40,
-        marginLeft:50,
+        textAlign:'center',
+        // maxWidth: 140,
+        // marginTop: 40,
+        // marginLeft: 50,
     }
 });
 
