@@ -15,15 +15,15 @@ function TeacherList() {
     const [favorites, setFavorites] = useState<number[]>([]);
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
-    const [subject, setSubject]= useState('');
-    const [week_day, setWeekDay]= useState('');
-    const [time, setTime]= useState('');
+    const [subject, setSubject] = useState('');
+    const [week_day, setWeekDay] = useState('');
+    const [time, setTime] = useState('');
 
-    function loadFavorites(){
+    function loadFavorites() {
         AsyncStorage.getItem('favorites').then(response => {
-            if(response){
+            if (response) {
                 const favoritedTeachers = JSON.parse(response);
-                const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher)=>{
+                const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher) => {
                     return teacher.id;
                 })
                 setFavorites(favoritedTeachersIds);
@@ -31,7 +31,7 @@ function TeacherList() {
         });
     }
 
-    useFocusEffect(()=>{
+    useFocusEffect(() => {
         loadFavorites();
     });
 
@@ -41,13 +41,11 @@ function TeacherList() {
         setIsFiltersVisible(!isFiltersVisible);
     }
 
-    async function handleFiltersSubmit () {
+    async function handleFiltersSubmit() {
         loadFavorites();
         const response = await api.get('classes', {
             params: {
-                subject,
-                week_day,
-                time,
+
             }
         });
         console.log(response.data);
@@ -57,58 +55,12 @@ function TeacherList() {
 
     return <View style={styles.container}>
         <PageHeader
-            title="Proffys disponíveis"
-            headerRight={(
-                <BorderlessButton onPress={handleToggleFiltersVisible}>
-                    <Feather name="filter" size={20} color="#FFF" />
-                </BorderlessButton>
+            title="Responda as seguintes perguntas! "
+        >
+            <Text
+                style={styles.subtitulo}
+            >Precise que pense no seu negócio e detalhe ao máximo as suas respostas! {'\n'}</Text>
 
-            )}>
-
-            {isFiltersVisible && (
-                <View style={styles.searchForm}>
-                    <Text style={styles.label}>Matéria</Text>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Qual a matéria?"
-                        value={subject}
-                        onChangeText={text =>setSubject(text)}
-                    >
-                    </TextInput>
-
-                    <View style={styles.inputGroup}>
-                        <View style={styles.inputBlock}>
-                            <Text style={styles.label}>Dia da semana</Text>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Qual o dia?"
-                                value={week_day}
-                                onChangeText={text =>setWeekDay(text)}
-                                >
-                            </TextInput>
-                        </View>
-                        <View style={styles.inputGroup}>
-                            <View style={styles.inputBlock}>
-                                <Text style={styles.label}>Horário </Text>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Qual horário?"
-                                    value={time}
-                                    onChangeText={text =>setTime(text)}
-                                    >
-                                </TextInput>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View>
-                        <RectButton onPress={handleFiltersSubmit} style={styles.submitButton}>
-                            <Text style={styles.submitButtonText}> Filtrar</Text>
-                        </RectButton>
-                    </View>
-
-                </View>
-            )}
         </PageHeader>
 
         <ScrollView
@@ -118,15 +70,171 @@ function TeacherList() {
                 paddingBottom: 16,
             }}
         >
-            {teachers.map((teacher: Teacher) => {
-                return( 
-                <TeacherItem 
-                key={teacher.id} 
-                teacher={teacher}
-                favorited={favorites.includes(teacher.id)}
-                />)
-            })}
-            
+
+            <View style={styles.searchForm}>
+                <Text style={styles.label}>Dados Pessoais</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Nome"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+                <TextInput
+                    style={styles.input}
+                    placeholder="CPF"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Telefone"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Nome do seu negócio"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Qual a matéria?"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="CNPJ (se tiver)"
+                    value={subject}
+                    onChangeText={text => setSubject(text)}
+                >
+                </TextInput>
+
+            </View>
+
+            <Text
+                style={styles.subtitulo}
+            >O que você precisa para começar seu projeto? {'\n'}</Text>
+
+            <Text
+                style={styles.subtitulo}
+            >Liste pelo menos 5 Items {'\n'}</Text>
+
+
+
+
+            <View style={styles.inputGroup}>
+                <View style={styles.inputBlock}>
+                    <Text style={styles.label}>Items</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="item 1 "
+                        value={week_day}
+                        onChangeText={text => setWeekDay(text)}
+                    >
+                    </TextInput>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="item 1 "
+                        value={week_day}
+                        onChangeText={text => setWeekDay(text)}
+                    >
+                    </TextInput>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="item 1 "
+                        value={week_day}
+                        onChangeText={text => setWeekDay(text)}
+                    >
+                    </TextInput>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="item 1 "
+                        value={week_day}
+                        onChangeText={text => setWeekDay(text)}
+                    >
+                    </TextInput>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="item 1 "
+                        value={week_day}
+                        onChangeText={text => setWeekDay(text)}
+                    >
+                    </TextInput>
+
+                </View>
+                <View style={styles.inputGroup}>
+                    <View style={styles.inputBlock}>
+                        <Text style={styles.label}>Valor </Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="0,00"
+                            value={time}
+                            onChangeText={text => setTime(text)}
+                        >
+                        </TextInput>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="0,00"
+                            value={time}
+                            onChangeText={text => setTime(text)}
+                        >
+                        </TextInput>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="0,00"
+                            value={time}
+                            onChangeText={text => setTime(text)}
+                        >
+                        </TextInput>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="0,00"
+                            value={time}
+                            onChangeText={text => setTime(text)}
+                        >
+                        </TextInput>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="0,00"
+                            value={time}
+                            onChangeText={text => setTime(text)}
+                        >
+                        </TextInput>
+
+                    </View>
+                </View>
+            </View>
+
+
+            <View>
+                <RectButton onPress={handleFiltersSubmit} style={styles.submitButton}>
+                    <Text style={styles.submitButtonText}> Confirmar</Text>
+                </RectButton>
+            </View>
+
         </ScrollView>
 
     </View>

@@ -4,7 +4,7 @@ import { Poppins_800ExtraBold } from '@expo-google-fonts/poppins';
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#f0f0f7'
+        backgroundColor: '#442C64'
     },
 
     teacherList: {
@@ -48,18 +48,22 @@ const styles = StyleSheet.create({
     
 
     submitButton: {
-        backgroundColor: '#04d361',
+        backgroundColor: '#50C2B1',
         height: 56,
         borderRadius: 8,
         flexDirection:'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom:10
+        marginBottom:20
 
     },
     submitButtonText: {
         color: '#FFF',
         fontSize:16,
+    },
+
+    subtitulo: {
+        color:'#FFF'
     }
 
 
