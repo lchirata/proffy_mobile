@@ -110,14 +110,6 @@ function TeacherList() {
                 </TextInput>
                 <TextInput
                     style={styles.input}
-                    placeholder="Qual a matéria?"
-                    value={subject}
-                    onChangeText={text => setSubject(text)}
-                >
-                </TextInput>
-
-                <TextInput
-                    style={styles.input}
                     placeholder="CNPJ (se tiver)"
                     value={subject}
                     onChangeText={text => setSubject(text)}
@@ -128,7 +120,7 @@ function TeacherList() {
 
             <Text
                 style={styles.subtitulo}
-            >O que você precisa para começar seu projeto? {'\n'}</Text>
+            >{'\n'}O que você precisa para começar seu projeto? {'\n'}</Text>
 
             <Text
                 style={styles.subtitulo}
@@ -150,7 +142,7 @@ function TeacherList() {
 
                     <TextInput
                         style={styles.input}
-                        placeholder="item 1 "
+                        placeholder="item 2 "
                         value={week_day}
                         onChangeText={text => setWeekDay(text)}
                     >
@@ -158,7 +150,7 @@ function TeacherList() {
 
                     <TextInput
                         style={styles.input}
-                        placeholder="item 1 "
+                        placeholder="item 3 "
                         value={week_day}
                         onChangeText={text => setWeekDay(text)}
                     >
@@ -166,7 +158,7 @@ function TeacherList() {
 
                     <TextInput
                         style={styles.input}
-                        placeholder="item 1 "
+                        placeholder="item 4 "
                         value={week_day}
                         onChangeText={text => setWeekDay(text)}
                     >
@@ -174,7 +166,7 @@ function TeacherList() {
 
                     <TextInput
                         style={styles.input}
-                        placeholder="item 1 "
+                        placeholder="item 5 "
                         value={week_day}
                         onChangeText={text => setWeekDay(text)}
                     >

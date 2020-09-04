@@ -63,40 +63,23 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
     return (
         <View style={styles.container}>
             <View style={styles.profile}>
-                <Image
-                    style={styles.avatar}
-                    source={{ uri: teacher.avatar }}
-                />
                 <View style={styles.profileInfo}>
-                    <Text style={styles.name}>{teacher.name}</Text>
-                    <Text style={styles.subject}>{teacher.subject}</Text>
+                    <Text style={styles.name}>O valor que você precisa é de: {`\n`}{`\n`}RS 50,000</Text>
+                    <Text style={styles.subject}>E você pode parcelar em : 12X</Text>
                 </View>
             </View>
 
-            <Text style={styles.bio}>{teacher.bio}</Text>
+            <Text style={styles.bio}>Trabalhando mais ou menos 3 dias, você consegue quitar o valor da parcela !</Text>
 
             <View style={styles.footer}>
-                <Text style={styles.price}>
-                    Preço/hora {'  '}
-                    <Text style={styles.priceValue}> R$ {teacher.cost} </Text>
-                </Text>
+
+            <Text>Entre em contato com um de nossos gerentes!</Text>
+
 
                 <View style={styles.buttonContainer}>
-                    <RectButton
-                        onPress={handleToggleFavorite}
-                        style={[
-                            styles.favoriteButton,
-                            isFavorited ? styles.favorited : {},
-                        ]}>
-                        {isFavorited
-                            ? <Image source={unfavoriteIcon} />
-                            : <Image source={heartOutlineIcon} />
-                        }
-                    </RectButton>
-
+                   
                     <RectButton onPress={handleLinkToWhatsapp} style={styles.contactButton}>
-                        <Image source={whatsappIcon} />
-                        <Text style={styles.contactButtonText}>Entrar em contato</Text>
+                        <Text style={styles.contactButtonText}>Entrar em contato!</Text>
                     </RectButton>
                 </View>
             </View>

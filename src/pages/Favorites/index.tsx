@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 
 import styles from './styles';
 import PageHeader from '../../assets/components/PageHeader';
@@ -26,29 +26,62 @@ function Favorites() {
     });
 
 
-    return (<View style={styles.container}>
-        <PageHeader title="Minha Simulação" />
+    return (
 
-        <ScrollView
-            style={styles.teacherList}
-            contentContainerStyle={{
-                paddingHorizontal: 16,
-                paddingBottom: 16,
-            }}
-        >
+
+        <View style={styles.container}>
+            <PageHeader title="Minha Simulação" />
+
+            <ScrollView>
             {favorites.map((teacher: Teacher) => {
-                return (
-                    <TeacherItem
-                        key={teacher.id}
-                        teacher={teacher}
-                        favorited={true}
-                    >
+                    return (
+                        <TeacherItem
+                            key={teacher.id}
+                            teacher={teacher}
+                            favorited={true}
+                        >
 
-                    </TeacherItem>
-                )
-            })}
-        </ScrollView>
-    </View>)
+                            <Text>
+                                OII
+                             </Text>
+
+                        </TeacherItem>
+                    )
+                })}
+            </ScrollView>
+
+
+            {/* <ScrollView
+                style={styles.teacherList}
+                contentContainerStyle={{
+                    paddingHorizontal: 16,
+                    paddingBottom: 16,
+                }}
+            >
+
+
+
+                {favorites.map((teacher: Teacher) => {
+                    return (
+                        <TeacherItem
+                            key={teacher.id}
+                            teacher={teacher}
+                            favorited={true}
+                        >
+
+                            <Text>
+                                OII
+                             </Text>
+
+                        </TeacherItem>
+                    )
+                })}
+            </ScrollView> */}
+
+
+        </View>
+
+    )
 }
 
 export default Favorites;

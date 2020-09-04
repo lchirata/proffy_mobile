@@ -32,12 +32,14 @@ const styles = StyleSheet.create({
     name: {
         color: '#32264d',
         fontSize: 20,
-        padding:5
+        padding:5,
+        textAlign:'center'
     },
 
     subject: {
-        color:'#6a6180',
-        fontSize: 12,
+        color:'#50C2B1',
+        textAlign:'center',
+        fontSize: 16,
         marginTop:0,
         padding:5
     },
@@ -45,9 +47,10 @@ const styles = StyleSheet.create({
     bio: {
         flexDirection: 'row',
         marginHorizontal:24,
-        fontSize:14,
+        fontSize:16,
         lineHeight:24,
         color: '#6a6180',
+        textAlign:'center'
     },
     footer: {
         backgroundColor:'#fafafc',
@@ -86,7 +89,7 @@ const styles = StyleSheet.create({
     },
 
     contactButton: {
-        backgroundColor: '#04d361',
+        backgroundColor: '#FC6404',
         flex: 1,
         height: 56,
         borderRadius: 8,

@@ -4,7 +4,7 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 import backIcon from '../../images/icons/back.png';
-import logoImage from '../../images/logo.png';
+// import logoImage from '../../images/logo.png';
 import { useNavigation } from '@react-navigation/native';
 
 interface PageHeaderProps {
@@ -26,7 +26,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({title,headerRight, children}) =>
                     <Image source={backIcon} resizeMode="contain" />
                 </BorderlessButton>
 
-                <Image source={logoImage} resizeMode="contain" />
+                {/* <Image source={logoImage} resizeMode="contain" /> */}
 
             </View>
 
